@@ -17,7 +17,7 @@ export default function ShoppingCart(){
     }
     function displayItems(){
         const JSXproducts = cart.map(({ name, price, quantity }) => (
-            <CartItem name={name} price={price} quantity={quantity} />
+            <CartItem key={name} name={name} price={price} quantity={quantity} />
           ));
           return JSXproducts;
       
@@ -25,10 +25,10 @@ export default function ShoppingCart(){
     return(
         <div>
             <h2>Shopping Cart</h2>
-            <div>
+            <div className='cart'>
             {displayItems()}
             </div>
-            <p>Total: {total()}$</p>
+            <p className='total'>Total: {total()}$</p>
             <button disabled={total()===0} onClick={()=>{dispatch(checkout())}}>checkout</button>
         </div>
     )

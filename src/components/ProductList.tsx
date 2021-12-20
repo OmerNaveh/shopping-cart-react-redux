@@ -7,7 +7,7 @@ export default function ProductList(){
       );
     function Products() {
       const JSXproducts = products.map(({ name, price, quantity }) => (
-        <Product name={name} price={price} quantity={quantity} />
+        <Product key={name} name={name} price={price} quantity={quantity} />
       ));
       return JSXproducts;
     }
